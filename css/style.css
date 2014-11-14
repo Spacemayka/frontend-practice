@@ -1,0 +1,15 @@
+/*'body' is an element selector*/
+body{
+	padding: 20px;
+}
+
+
+/* '.' is a class selector. these are good.  they keep things general*/
+.dark_gray{
+	color: #787878;
+}
+.blue{
+	color: #2dc1c1;
+}
+
+

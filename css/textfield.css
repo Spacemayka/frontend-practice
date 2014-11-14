@@ -1,0 +1,7 @@
+.textfield{
+	height: 40px;
+
+}
+.textfield:focus{
+	background-color: #cccccc;
+}
