@@ -13,7 +13,7 @@ class Controller_Practice extends Controller_Base {
 
     public function route() {
     
-        $data["name"] = "Zach";   
+        $data["name"] = "Name";   
 
         return $data;
     }
