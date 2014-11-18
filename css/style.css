@@ -1,8 +1,13 @@
 /*'body' is an element selector*/
 body{
 	padding: 20px;
+	background-color: #2dc1c1;
 }
 
+#welcome_box {
+
+	background-color: white;
+}
 
 /* '.' is a class selector. these are good.  they keep things general*/
 .dark_gray{
