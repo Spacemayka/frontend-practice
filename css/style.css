@@ -1,20 +1,70 @@
 /*'body' is an element selector*/
 body{
-	padding: 20px;
 	background-color: #2dc1c1;
+
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-weight: 100;
 }
 
 #welcome_box {
 
 	background-color: white;
+
+	margin-top: 75px;
+	margin-left: auto;
+	margin-right: auto;
+
+	box-shadow: 0px 3px 3px #888888;
+
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	width: 700px;
+
+	font-size: 1.875em;
+	text-align: center;
+	color: #787878;
+
+	cursor: default;
+
+
+
 }
 
+.submit_button {
+
+	color: #a463ae;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+
+	padding-top: 12px;
+	padding-bottom: 12px;
+
+	width: 110px;
+
+	font-size: 0.6em;
+
+	cursor:pointer;
+}
+
+
+
 /* '.' is a class selector. these are good.  they keep things general*/
-.dark_gray{
+.welcome_text{
 	color: #787878;
+	margin-bottom: 50px;
 }
 .blue{
 	color: #2dc1c1;
+}
+
+.purple{
+	color: #a463ae;
 }
 
 

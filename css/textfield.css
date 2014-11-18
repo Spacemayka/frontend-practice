@@ -1,7 +1,23 @@
 .textfield{
+	
+	margin-bottom: 18px;
+
+	border-style: solid;
+	border-color: #2dc1c1;
+	border-width: 1px;
+	border-radius: 4px;
+
+	padding-left: 10px;
+
+
 	height: 40px;
+	width: 375px;
+
+	font-size: 0.6em;
+
+
 
 }
 .textfield:focus{
-	background-color: #cccccc;
+	border-color: #cccccc;
 }
