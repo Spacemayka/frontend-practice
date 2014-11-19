@@ -2,8 +2,8 @@
 body{
 	background-color: #2dc1c1;
 
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-weight: 100;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 300;
 }
 
 #container {
@@ -23,7 +23,6 @@ body{
 
 	font-size: 1.875em;
 	text-align: center;
-	color: #787878;
 
 	cursor: default;
 
@@ -31,7 +30,7 @@ body{
 
 }
 
-.submit_button {
+#submit_button {
 
 	color: #a463ae;
 	margin-top: 50px;
@@ -42,8 +41,8 @@ body{
 	border-width: 1px;
 	border-radius: 4px;
 
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-top: 16px;
+	padding-bottom: 16px;
 
 	width: 110px;
 

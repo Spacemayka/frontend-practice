@@ -25,7 +25,7 @@
     					var num = {{val}};
      					var container = $('<form />');
      					for(var i = 1; i <= num; i++) {
-         					container.append('<input class="textfield" placeholder="thing '+i+'"></input>');
+         					container.append('<input id="thing_'+i+'" class="textfield" placeholder="thing '+i+'"></input>');
      					}
      					$('#text_input').html(container);
 					});
@@ -37,8 +37,42 @@
 
 			
 
-			<div class="submit_button" class="purple">submit</div>
+			<div id="submit_button" class="purple">submit</div>
 		</div>
+
+		<script> $( "#submit_button" ).click(function() {
+			for (var i = 1; i <= {{val}}; i++) {
+				if ($.trim($('#thing_'+i+'').val()) == '') {
+					alert("Please fill out all fields");
+					return false;
+				};
+			};
+
+			str = $.trim($('#thing_'+{{val}}+'').val());
+
+			var valid_input = false;
+
+			if (/^[a-zA-Z]+$/.test(str)) {
+    		valid_input = true;
+			}
+
+			if (valid_input == false) {
+				alert("invalid input");
+				return false;
+			}
+
+
+			
+
+  		alert( "Submit" );
+  		$.post( "/controller/practice_actions.php", $( "#text_input" ).serialize() );
+		});
+
+		function isLetter(s)
+		{
+ 		 return s.match("^[a-zA-Z\(\)]+$");    
+		}
+		</script>
 
 
 
