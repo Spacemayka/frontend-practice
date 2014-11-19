@@ -1,7 +1,6 @@
 
 <?php
 
-echo "Hello world!<br>";
 
 require 'controller/practice.php';
 
