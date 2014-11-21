@@ -13,7 +13,17 @@ class Controller_Practice extends Controller_Base {
     public function route() {
     
         $data["name"] = "Isaac"; 
-        $data[val] = 3;
+        $number_of_fields = 5;
+
+
+        for ($i=0; $i < $number_of_fields; $i++) { 
+    		
+
+    	    $data["text_fields"][$i]["placeholder"] = "thing ".($i+1);
+	    
+        }
+
+
 
         return $data;
     }

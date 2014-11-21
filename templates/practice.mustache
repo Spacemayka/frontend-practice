@@ -8,6 +8,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/textfield.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<script type="text/javascript" src="../JS/external_JS.js"></script>
+
 
 	</head>
 
@@ -18,61 +20,15 @@
 			<div class="welcome_text">Hello, {{name}}.</div>
 
 
-				<form id="text_input"></form>
 
-				<script>
-					$( document ).ready(function() {
-    					var num = {{val}};
-     					var container = $('<form />');
-     					for(var i = 1; i <= num; i++) {
-         					container.append('<input id="thing_'+i+'" class="textfield" placeholder="thing '+i+'"></input>');
-     					}
-     					$('#text_input').html(container);
-					});
+				{{#text_fields}}
+					<input class="textfield" placeholder="{{placeholder}}"></input>
+				{{/text_fields}}
 				
-				
-     			</script>
-				
-			
-
-			
-
+		
 			<div id="submit_button" class="purple">submit</div>
+
 		</div>
-
-		<script> $( "#submit_button" ).click(function() {
-			for (var i = 1; i <= {{val}}; i++) {
-				if ($.trim($('#thing_'+i+'').val()) == '') {
-					alert("Please fill out all fields");
-					return false;
-				};
-			};
-
-			str = $.trim($('#thing_'+{{val}}+'').val());
-
-			var valid_input = false;
-
-			if (/^[a-zA-Z]+$/.test(str)) {
-    		valid_input = true;
-			}
-
-			if (valid_input == false) {
-				alert("invalid input");
-				return false;
-			}
-
-
-			
-
-  		alert( "Submit" );
-  		$.post( "/controller/practice_actions.php", $( "#text_input" ).serialize() );
-		});
-
-		function isLetter(s)
-		{
- 		 return s.match("^[a-zA-Z\(\)]+$");    
-		}
-		</script>
 
 
 
