@@ -4,11 +4,14 @@ $( document ).ready(function() {
 	$( "#submit_button" ).click(function() {
 	//validate
 
-		validate_input();
+		if (validate_input()) {
+			item = create_json();
 
-		item = create_json();
+			$.post("/controller/practice_actions.php", {postname:item}, alert("posted"));
 
-		$.post("/controller/practice_actions.php", {postname:item}, alert("posted"));
+		}
+
+		
 		
 
 
@@ -27,26 +30,35 @@ function validate_input() {
 
 			var total = $('.textfield').length;
 			$('.textfield').each(function(i){
+				//if any field is empty
 				if ($.trim($(this).val()) == '') {
 					valid_input = false;
 					}
 
-				if (i == (total - 1)) {
+				//if the last field is nonempty and non-alphabetic
+				if ((i == (total - 1)) && ($.trim($(this).val()) != '')) {
         			if (is_alphabetic($.trim($(this).val())) == false) {
 					valid_content = false; 
 					}
     			}
 
+
 			});
 
 
-		if (valid_content == false) {
-			alert("Invalid Input");
-		}
 
 		if (valid_input == false) {
 			alert("Please fill out all fields");
+			return false;
 		}
+		if (valid_content == false) {
+			alert("Please use alphabetic characters for the last input");
+			return false;
+		}
+
+		
+
+		return true;
 
 		
 }
@@ -70,13 +82,13 @@ function create_json() {
 
 function is_alphabetic(str) {
 
-		valid_input = false;
+		alphabetic = false;
 
 		if (/^[a-zA-Z]+$/.test(str)) {
-    		valid_input = true;
+    		alphabetic = true;
 		}
 
-		return valid_input;
+		return alphabetic;
 
 }
 
