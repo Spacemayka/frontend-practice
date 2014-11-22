@@ -6,9 +6,14 @@ $( document ).ready(function() {
 
 		if (validate_input()) {
 			item = create_json();
+			$.post('../controller/practice_actions.php', 
+				{postname: item}, 
+				function() {
+  				alert_success();
+				});
 
-			$.post("/controller/practice_actions.php", {postname:item}, alert("posted"));
 
+			
 		}
 
 		
@@ -17,10 +22,6 @@ $( document ).ready(function() {
 
 	});
 
-
-	//put in object
-
-	//post
 
 });
 
@@ -48,11 +49,12 @@ function validate_input() {
 
 
 		if (valid_input == false) {
-			alert("Please fill out all fields");
+			alert_emptyfield();
+			
 			return false;
 		}
 		if (valid_content == false) {
-			alert("Please use alphabetic characters for the last input");
+			alert_nonalphabetic();
 			return false;
 		}
 
@@ -65,17 +67,16 @@ function validate_input() {
 
 function create_json() {
 
-		item = {};
-	
+		jsonObj = {};
 
 	$("input[class=textfield]").each(function(i) {
-		item['key'+i] = $(this).val();
-
+		jsonObj["key"+i] = $(this).val();
 
     });
 
-    console.log(item);
-    return item;
+    jsonString = JSON.stringify(jsonObj);
+    console.log(jsonString);
+    return jsonString;
 }
 
 
@@ -93,33 +94,29 @@ function is_alphabetic(str) {
 }
 
 
-function generate_fields(num) {
 
-	$( document ).ready(function() {
-		var container = $('<form />');
-     		for(var i = 1; i <= num; i++) {
-         	container.append('<input type="text" id="thing_'+i+'" class="textfield"></input>');
-     		}
-     	$('#text_input').html(container);
 
-	});
 
+function alert_success() {
+
+	$('#submit_button').fadeTo(50,0.5).fadeTo(50,1);
+	$('#alert').replaceWith("<div id='alert'>submitted</div>");
+	$('#alert').delay(500).fadeOut(500);
+	
+	
+	
 }
 
-
-function classify_fields() {
-	$( document ).ready(function() {
-			$('input[type=text]').each(function(i){
-    		$(this).attr("placeholder", "thing" + " " + ++i);
-    		//$(this).attr("name", "thing_" + i)
-
-			});
-	});	
-
+function alert_nonalphabetic() {
+	$('#alert').replaceWith("<div id='alert'>use only alphabetic characters in bottom field</div>");
+	$('#alert').delay(2000).fadeOut(500);
+	
+	
 }
 
+function alert_emptyfield() {
+	$('#alert').replaceWith("<div id='alert'>please fill out all fields</div>");
+	$('#alert').delay(1500).fadeOut(500);
 
-
-
-
+}
 

@@ -9,17 +9,11 @@ class Controller_Practice_Actions {
 
 
 	public function route(){
-		
-		//handle POSTs and GETs
-		$data = $_POST['postname'];
+			
 
-		if(sizeof($_POST['postname'])) {
-		echo("post");
-		}
-		else {
-		echo("no post");
-		}
-		
+		$posted_data = $_POST['postname'];
+		$data = json_decode($posted_data);
+		return $data;
 	
 	}
 
@@ -28,6 +22,4 @@ class Controller_Practice_Actions {
 }
 
 $actions = new Controller_Practice_Actions();
-$actions->route();
-
-//echo $actions;
+$data = $actions->route();

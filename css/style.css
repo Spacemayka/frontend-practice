@@ -4,6 +4,8 @@ body{
 
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 300;
+	min-width: 900;
+	min-height: 580;
 }
 
 #container {
@@ -63,7 +65,16 @@ body{
 }
 
 .purple{
-	color: #a463ae;
+	color: #a463ae;;
 }
+
+#alert{
+	font-size: 0.6em;
+	cursor: default;
+	height: 10px;
+
+}
+
+
 
 
