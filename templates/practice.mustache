@@ -5,16 +5,35 @@
 		<title>Practice</title>
 
 		<!-- included sources -->		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/textfield.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<script type="text/javascript" src="../JS/external_JS.js"></script>
+
 
 	</head>
 
 
 	<body>
 
-		<div class="blue">Welcome, {{name}}</div>
+		<div id="container" >
+			<div class="welcome_text">Hello, {{name}}.</div>
+
+
+
+				{{#text_fields}}
+					<input class="textfield" placeholder="{{placeholder}}"></input>
+				{{/text_fields}}
+
+				<!-- field to hold user alerts -->
+				<div id='alert'></div>
+				
+		
+			<div id='submit_button' class='purple'>submit</div>
+
+		</div>
+
+
 
 	</body>
 

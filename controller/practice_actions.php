@@ -1,6 +1,7 @@
 <?php
 
 
+
 class Controller_Practice_Actions {
 
 	function __construct(){
@@ -8,8 +9,11 @@ class Controller_Practice_Actions {
 
 
 	public function route(){
-		
-		//handle POSTs and GETs
+			
+
+		$posted_data = $_POST['postname'];
+		$data = json_decode($posted_data);
+		return $data;
 	
 	}
 
@@ -18,4 +22,4 @@ class Controller_Practice_Actions {
 }
 
 $actions = new Controller_Practice_Actions();
-$actions->route();
+$data = $actions->route();
