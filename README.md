@@ -3,7 +3,7 @@ Mustache, CSS, jQuery, Git, and a bit of PHP
 Fork my respository: https://github.com/zachlite/frontend-practice  to a new branch.  Make commits, and push your changes as you go.
 
 
-Try and make a webpage that looks as close to hello.png as possible.
+Try and make a webpage that looks as close to hello.png as possible.  It should be responsive, and mobile friendly
 
 Change "Name" to your name in the controller.
 
