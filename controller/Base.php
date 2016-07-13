@@ -14,6 +14,4 @@ class Controller_Base {
         return $templates;
     }
 
-
-
 }
