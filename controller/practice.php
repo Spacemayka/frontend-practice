@@ -17,11 +17,10 @@ class Controller_Practice extends Controller_Base {
     	// set num of fields
 
     	// dynamicall make array
-
-    	$num_fields = 10;
+    	include "theVariable.php";
     	$data["myData"] = [];
     	for ($x = 1; $x < $num_fields + 1; $x++){
-    		array_push($data["myData"], ["name" => "field " .$x]);
+    		array_push($data["myData"], ["name" => 'field ' .$x]);
     		// echo json_encode($data);
     	}
       	// $data["name"] = "Josh";

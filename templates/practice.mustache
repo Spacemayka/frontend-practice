@@ -7,7 +7,7 @@
 		<!-- included sources -->		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-		<script type="text/javascript" src = "main.js"></script>
+		<script type="text/javascript" src="/main.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="../css/textfield.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -19,17 +19,15 @@
 	<body>
 
 		<div class="blue">
-			{{#myData}}
-				<input type="text" id = "theFields" name="{{name}}" placeholder="{{name}}"><br>
-			{{/myData}}
-			<!-- <p>your email is {{email}}</p>
-			<p>your birthday is {{bday}}</p>
-			<p>your status is {{status}}</p> -->
-			<form action="/" method = "post" id = "theForm">
-<!--   				<input type="text" name="field1" placeholder="thing 1"><br>
-  				<input type="text" name="field2" placeholder="thing 2"><br>
-  				<input type="text" name="field3" placeholder="thing 3"><br> -->
-  				<input type="submit" id = "submit_btn" value="Submit">
+
+			<form id = "theForm">
+
+				{{#myData}}
+					<input type="text" class="field" name="{{name}}" placeholder="{{name}}"><br>
+				{{/myData}}
+
+  				<button id = "submit_btn">Submit</button>
+
 			</form>
 		</div>
 
