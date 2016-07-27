@@ -1,13 +1,11 @@
 $(document).ready(function(){
 	$("#submit_btn").click(function(event){
 	event.preventDefault();
-	alert("button clicked");
-	var the_num = "1";
 
 		for (var i = 0; i < theForm.elements.length - 1; i++) {
 		    if (theForm.elements[i].value.length == 0) {
 		        theForm.elements[i].focus();
-		        alert("write something!")
+		        alert("All forms must be filled out before submitting.")
 		        break;
 		    }
 		    else if(i == theForm.elements.length - 2){
@@ -24,6 +22,4 @@ $(document).ready(function(){
 		}
 	});
 });
-
-
 
