@@ -1,22 +1,51 @@
 /*'body' is an element selector*/
 body{
-	padding: 200px;
+	padding: 10%;
 	background-color: 00CCCC;
 }
+
+
 
 
 /* '.' is a class selector. these are good.  they keep things general*/
 .dark_gray{
 	color: #787878;
 }
-.blue{
+
+
+
+.page-content{
 	padding: 20px;
 	color: #787878;
 	background-color: white;
 	text-align: center;
 	font-family: 'roboto', sans-serif;
-	height: 400px;
+	height: 100%;
 	box-shadow: 2px 2px 8px 0px #282828;
 }
 
+.field{
+	width: 750px;
+	height: 50px;
+}
+
+@media all and (max-width: 1100px){
+	.field{
+		width: 500px;
+	}
+}
+
+@media all and (max-width: 700px){
+	.field{
+		width: 250px;
+		height: 30px;
+	}
+}
+
+@media all and (max-width: 500px){
+	.field{
+		width: 200px;
+		height: 30px;
+	}
+}
 

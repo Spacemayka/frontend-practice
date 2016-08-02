@@ -1,2 +1,2 @@
 <?php
-$num_fields = 3;
+$num_fields = 5;
